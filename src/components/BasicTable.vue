@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table :style="{ color: textColor }">
     <thead>
       <tr>
         <th>Name</th>
@@ -22,7 +22,9 @@ import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'BasicTable',
-  setup() {
+  setup(_, { attrs }) {
+    const textColor = ref(attrs.textColor || '#000000');
+
     const data = ref([
       { id: 1, name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park' },
       { id: 2, name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park' },
@@ -31,6 +33,7 @@ export default defineComponent({
 
     return {
       data,
+      textColor,
     };
   },
 });
