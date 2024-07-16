@@ -6,7 +6,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import BasicTable from './components/BasicTable.vue';
+import BasicTable from './components/wwElement.vue';
 
 export default defineComponent({
   name: 'App',
